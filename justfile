@@ -6,6 +6,9 @@ youtube_url := "https://youtu.be/S9XNG8z0mx0"
 @audio args:
 	uv run main.py audio {{ args }}
 
+@video args:
+	uv run main.py video {{ args }}
+
 metadata:
 	yt-dlp --dump-json {{ youtube_url }}
 
@@ -24,5 +27,6 @@ output1:
 test1:
 	just audio {{ youtube_url }}
 
-
+test2:
+	just video {{ youtube_url }}
     
