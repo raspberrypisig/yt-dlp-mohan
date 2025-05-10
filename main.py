@@ -1,8 +1,11 @@
 import typer
 from typing_extensions import Annotated
+from trogon.typer import init_tui
 import subprocess
 
+
 app = typer.Typer(add_completion=False)
+init_tui(app)
 
 @app.command(help="Extract audio from youtube video")
 def audio(youtube_url: Annotated[str, typer.Argument()]):
